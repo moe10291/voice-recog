@@ -13,6 +13,7 @@ const content = document.querySelector('.content')
 const greetings=['I am good', 'Rocking as usual', 'Better than I deserve']
 const weather=['weather is fine', 'its sunny', 'why do you care?']
 const hungry=["Me too, let's eat something", "So are kids in Africa", "No, you are just fat", "Eat healthy"]
+const unresponsive="Please ask me something else"
 const SpeechRecognition= window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition= new SpeechRecognition();
 
@@ -87,6 +88,10 @@ readOutLoud=(message)=>{
     }
     else if (message.includes("starving"||"hungry")){
         const finalText= hungry[Math.floor(Math.random()*hungry.length)];
+        speech.text= finalText;
+    }
+    else{
+        const finalText=unresponsive
         speech.text= finalText;
     }
     speech.volume= 1;

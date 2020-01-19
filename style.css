@@ -1,3 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 .talk{
     background-color: #4CAF50; /* Green */
   border: none;
@@ -20,6 +26,21 @@
 }
 
 
-.box{
-    background: antiquewhite;
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(rgb(155, 66, 66), rgb(38, 199, 228));
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+}
+
+h3{
+    display: block;
+    padding-top: 2em;
+    font-family: 'El Messiri';
+    font-size: 48px;
 }
