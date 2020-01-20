@@ -57,8 +57,9 @@ readOutLoud=(message)=>{
                 })
                 .then(data => {
                     console.log(data)
-                    const {temperature, summary, icon}= data.currently;
-                    console.log('WEATHER', data.currently.temperature)
+                    const {temperature}= data.currently;
+                    const {summary}= data.hourly
+                    console.log('WEATHER', summary)
                     //Set DOM elements from the API
     
                     // tempratureDegree.textContent= Math.round(temperature);
@@ -66,11 +67,11 @@ readOutLoud=(message)=>{
                     // locationTimezone.textContent= data.timezone;
                     // Formula for Celcius
     
-                    let celsius= (temperature-32)* (5/9)
+                    let celsius= Math.floor((temperature-32)* (5/9))
                     console.log('LETS SEE', celsius)
 
                     //'It is'+Math.floor(data.currently.temperature)+' degrees fahrenheit'
-                    const finalText= `It is ${Math.floor(data.currently.temperature)} degrees fahrenheit`
+                    const finalText= `It is ${Math.floor(temperature)} degrees fahrenheit or ${celsius} celsius with ${summary}`
                     console.log('WEATHER', finalText)
                     speech.text= finalText;
                     console.log(speech.text)
@@ -95,7 +96,7 @@ readOutLoud=(message)=>{
         speech.text= finalText;
     }
     speech.volume= 1;
-    speech.rate= 1;
+    speech.rate= 1.2;
     speech.pitch=1;
     // speech.text= message;
 
