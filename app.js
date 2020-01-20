@@ -91,6 +91,11 @@ readOutLoud=(message)=>{
         const finalText= hungry[Math.floor(Math.random()*hungry.length)];
         speech.text= finalText;
     }
+
+    else if(message.includes('your name')){
+        const audio= new Audio('/sheela.mp3');
+        audio.play(); 
+    }
     else{
         const finalText=unresponsive
         speech.text= finalText;
