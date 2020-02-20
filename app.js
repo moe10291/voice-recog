@@ -1,5 +1,6 @@
 const btn= document.querySelector('.talk');
 const content = document.querySelector('.content')
+
 //  let long;
 //     let lat;
 //     let tempratureDescription= document.querySelector('.temprature-description');
@@ -13,11 +14,11 @@ const content = document.querySelector('.content')
 const greetings=['I am good', 'Rocking as usual', 'Better than I deserve']
 const weather=['weather is fine', 'its sunny', 'why do you care?']
 const hungry=["Me too, let's eat something", "So are kids in Africa", "No, you are just fat", "Eat healthy"]
-const unresponsive="Please ask me something else"
+const unresponsive="Please ask me questions like, How are you, How is the weather, or say I'm starving"
 const SpeechRecognition= window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition= new SpeechRecognition();
 
-recognition.onstart= function (){
+recognition.onstart= function(){
 //    console.log('speak up')
 };
 
@@ -31,7 +32,7 @@ recognition.onresult= function (event){
     readOutLoud(transcript);
 };
 
-//add the listener 
+//xiomararivera395@yahoo.com 
 
 btn.addEventListener('click', ()=> {
     recognition.start();
@@ -93,7 +94,7 @@ readOutLoud=(message)=>{
     }
 
     else if(message.includes('your name')){
-        const audio= new Audio('/sheela.mp3');
+        const audio= new Audio('/bond.mp3');
         audio.play(); 
     }
     else{
